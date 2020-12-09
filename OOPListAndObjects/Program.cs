@@ -54,7 +54,7 @@ namespace OOPListAndObjects
             string filePath = @"C:\Users\opilane\samples";
             string fileName = @"planet.txt";
             string fullPath = Path.Combine(filePath, fileName);
-
+            ListOfPlanets newPlanetsList = new ListOfPlanets();
             string[] planetsFromFile = File.ReadAllLines(fullPath);
 
             foreach (string line in planetsFromFile)
@@ -65,7 +65,11 @@ namespace OOPListAndObjects
                 Console.WriteLine(planetName);
                 Console.WriteLine(planetMass);
                 Console.WriteLine("----");
+
+                newPlanetsList.AddPlanetToList(planetName, planetMass);
+
             }
+            newPlanetsList.PrintPlanets();
         }
         
     }
